@@ -233,7 +233,7 @@ export default function Home() {
             <p className="text-muted-foreground">We address your primary concerns with absolute precision.</p>
           </div>
 
-          <Accordion type="single" collapsible className="w-full space-y-4">
+          <Accordion type="single" className="w-full space-y-4">
             <AccordionItem value="item-1" className="border border-border/50 bg-white px-6">
               <AccordionTrigger className="text-lg font-medium hover:text-accent">How long does a standard session actually take?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground text-base leading-relaxed">
