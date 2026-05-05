@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 
 import { Header } from "@/components/Header";
 import { MobileCTA } from "@/components/MobileCTA";
+import { Footer } from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -35,6 +36,7 @@ export default function RootLayout({
         <main className="flex-1">
           {children}
         </main>
+        <Footer />
         <MobileCTA />
       </body>
     </html>

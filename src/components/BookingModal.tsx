@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-export function BookingModal({ children }: { children: React.ReactNode }) {
+export function BookingModal({ children }: { children: React.ReactElement }) {
   const [open, setOpen] = useState(false);
 
   return (

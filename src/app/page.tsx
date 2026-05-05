@@ -233,7 +233,7 @@ export default function Home() {
             <p className="text-muted-foreground">We address your primary concerns with absolute precision.</p>
           </div>
 
-          <Accordion type="single" className="w-full space-y-4">
+          <Accordion className="w-full space-y-4">
             <AccordionItem value="item-1" className="border border-border/50 bg-white px-6">
               <AccordionTrigger className="text-lg font-medium hover:text-accent">How long does a standard session actually take?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground text-base leading-relaxed">
@@ -265,21 +265,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. FOOTER */}
-      <footer className="w-full bg-primary text-primary-foreground py-16 px-4 md:px-12 text-center md:text-left border-t-4 border-accent">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div>
-            <h2 className="font-heading text-2xl mb-2">Sydney CBD <span className="text-accent font-sans">Dental-Spa</span></h2>
-            <p className="text-white/60 text-sm">Elevating dental care for the modern professional.</p>
-          </div>
-          <div className="flex gap-6">
-            <BookingModal>
-              <Button className="bg-accent text-primary hover:bg-white rounded-none">Reserve Session</Button>
-            </BookingModal>
-            <Button variant="outline" className="border-white/20 text-primary hover:bg-white/10 rounded-none">View Gallery</Button>
-          </div>
-        </div>
-      </footer>
+
 
     </div>
   );
