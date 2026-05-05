@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 import { Header } from "@/components/Header";
 import { MobileCTA } from "@/components/MobileCTA";
 import { Footer } from "@/components/Footer";
+import { EmergencyConcierge } from "@/components/EmergencyConcierge";
 
 export default function RootLayout({
   children,
@@ -37,6 +38,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <EmergencyConcierge />
         <MobileCTA />
       </body>
     </html>

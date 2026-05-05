@@ -7,6 +7,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookingModal } from "@/components/BookingModal";
+import { AtelierPortfolio } from "@/components/AtelierPortfolio";
+import { TechnologyShowcase } from "@/components/TechnologyShowcase";
+import { PractitionerGrid } from "@/components/PractitionerGrid";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { SmileQuiz } from "@/components/SmileQuiz";
+import { VirtualTour } from "@/components/VirtualTour";
 import { CheckCircle2, Clock, ShieldCheck, Star } from "lucide-react";
 
 export default function Home() {
@@ -32,7 +38,7 @@ export default function Home() {
         <div className="flex-1 pt-20 md:pt-0 z-10 md:pr-12">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="font-heading text-5xl md:text-7xl leading-tight text-primary mb-6">
-              The 60-Minute <br/><span className="text-accent italic">Dental Ritual</span><br/> for Sydney’s Elite.
+              The 60-Minute <br/><span className="text-accent italic">Dental Ritual</span><br/> for Sydney&apos;s Elite.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
               Experience a sanctuary of precision and calm in the heart of the CBD. Your time is respected; your comfort is prioritized.
@@ -43,7 +49,7 @@ export default function Home() {
                   Reserve Your Session
                 </Button>
               </BookingModal>
-              <Button variant="outline" size="lg" className="border-accent text-primary hover:bg-accent/10 h-14 px-8 rounded-none text-lg">
+              <Button variant="outline" size="lg" className="border-accent text-primary hover:bg-accent/10 h-14 px-8 rounded-none text-lg" onClick={() => document.getElementById('atelier')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Transformation Gallery
               </Button>
             </div>
@@ -112,7 +118,7 @@ export default function Home() {
                 <h3 className="font-heading text-2xl text-white">For The Investor</h3>
               </div>
               <p className="text-white/80 mb-8 text-lg">
-                The Transformation Suite. Luxury isn't a luxury. Your new smile for the cost of four coffees a week.
+                The Transformation Suite. Luxury isn&apos;t a luxury. Your new smile for the cost of four coffees a week.
               </p>
               
               <div className="flex-1 bg-white/5 p-6 border border-white/10 mb-10">
@@ -144,7 +150,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. THE SANCTUARY GALLERY (Parallax) */}
+      {/* 4. THE ATELIER PORTFOLIO (Before/After) */}
+      <AtelierPortfolio />
+
+      {/* 5. THE SANCTUARY GALLERY (Parallax) */}
       <section id="sanctuary" className="w-full py-24 bg-muted overflow-hidden">
         <div className="container mx-auto px-4 md:px-12 text-center mb-16">
           <h2 className="font-heading text-4xl md:text-5xl text-primary mb-4">The Sanctuary Experience</h2>
@@ -170,22 +179,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. SOCIAL PROOF */}
+      {/* 6. THE TECHNOLOGY SUITE */}
+      <TechnologyShowcase />
+
+      {/* 7. THE CLINICAL ARTISANS */}
+      <PractitionerGrid />
+
+      {/* 8. SOCIAL PROOF (Upgraded with Animated Counters) */}
       <section className="w-full py-24 px-4 md:px-12 bg-white border-t border-border/50">
         <div className="max-w-5xl mx-auto">
+          {/* 4-Column Evidence Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 py-8 border-y border-border/50">
+            <AnimatedCounter end={98} suffix="%" label="Punctuality Rate" />
+            <AnimatedCounter end={1247} suffix="+" label="CBD Smiles Transformed" />
+            <AnimatedCounter end={4.9} suffix="★" label="Patient Satisfaction" duration={1000} />
+            <AnimatedCounter end={12} suffix=" min" label="Barangaroo to Suite" duration={800} />
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12">
             <div className="flex flex-col justify-center">
-              <h2 className="font-heading text-4xl text-primary mb-8">Trusted by the professionals driving Sydney’s Finance & Tech sectors.</h2>
-              <div className="flex gap-8 mb-8">
-                <div>
-                  <p className="text-4xl font-heading text-accent mb-2">98%</p>
-                  <p className="text-sm font-medium text-foreground">Punctuality Rate.<br/>Under 2 min wait.</p>
-                </div>
-                <div>
-                  <p className="text-4xl font-heading text-accent mb-2">1.2k+</p>
-                  <p className="text-sm font-medium text-foreground">CBD Smiles<br/>Transformed.</p>
-                </div>
-              </div>
+              <h2 className="font-heading text-4xl text-primary mb-8">Trusted by the professionals driving Sydney&apos;s Finance & Tech sectors.</h2>
               <div className="space-y-2">
                 <span className="inline-block bg-muted px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary border border-border">Voted Premier Cosmetic Practice 2025</span>
                 <span className="inline-block bg-muted px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary border border-border">Official Partner to Equinox</span>
@@ -194,9 +207,9 @@ export default function Home() {
 
             <div className="space-y-8">
               <Card className="rounded-none border-border/50 shadow-sm bg-slate-50 relative p-8">
-                <div className="text-accent mb-4 text-4xl font-serif">"</div>
+                <div className="text-accent mb-4 text-4xl font-serif">&quot;</div>
                 <p className="text-lg italic text-foreground/80 mb-6 relative z-10">
-                  The efficiency is unmatched. I was in at 12:00 and back at my desk in Barangaroo by 1:05. It’s the first time a dental visit felt like a productivity win rather than a time sink.
+                  The efficiency is unmatched. I was in at 12:00 and back at my desk in Barangaroo by 1:05. It&apos;s the first time a dental visit felt like a productivity win rather than a time sink.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">SA</div>
@@ -208,9 +221,9 @@ export default function Home() {
               </Card>
 
               <Card className="rounded-none border-border/50 shadow-sm bg-slate-50 relative p-8">
-                <div className="text-accent mb-4 text-4xl font-serif">"</div>
+                <div className="text-accent mb-4 text-4xl font-serif">&quot;</div>
                 <p className="text-lg italic text-foreground/80 mb-6 relative z-10">
-                  I’ve always been anxious about dental work, but the 'Sanctuary' vibe is real. The noise-canceling tech and the calm aesthetic made my veneer transformation actually enjoyable.
+                  I&apos;ve always been anxious about dental work, but the &apos;Sanctuary&apos; vibe is real. The noise-canceling tech and the calm aesthetic made my veneer transformation actually enjoyable.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">CD</div>
@@ -225,7 +238,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. FAQ (Objection Removal) */}
+      {/* 9. THE AESTHETIC BLUEPRINT (Smile Quiz) */}
+      <SmileQuiz />
+
+      {/* 10. FAQ (Objection Removal) */}
       <section id="faq" className="w-full py-24 px-4 md:px-12 bg-muted/30 border-t border-border/50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
@@ -237,14 +253,14 @@ export default function Home() {
             <AccordionItem value="item-1" className="border border-border/50 bg-white px-6">
               <AccordionTrigger className="text-lg font-medium hover:text-accent">How long does a standard session actually take?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Our Executive Ritual is hard-capped at 60 minutes. We provide a "Punctuality Guarantee"—if we aren't ready for you within 5 minutes of your reserved time, your next session is on us.
+                Our Executive Ritual is hard-capped at 60 minutes. We provide a &quot;Punctuality Guarantee&quot;—if we aren&apos;t ready for you within 5 minutes of your reserved time, your next session is on us.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-2" className="border border-border/50 bg-white px-6">
-              <AccordionTrigger className="text-lg font-medium hover:text-accent">I hate the 'dentist smell' and the sound of drills.</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-medium hover:text-accent">I hate the &apos;dentist smell&apos; and the sound of drills.</AccordionTrigger>
               <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                We’ve eliminated both. Our clinic uses medical-grade air filtration infused with subtle essential oils and provides premium noise-canceling headphones to ensure your "Session" feels nothing like a traditional check-up.
+                We&apos;ve eliminated both. Our clinic uses medical-grade air filtration infused with subtle essential oils and provides premium noise-canceling headphones to ensure your &quot;Session&quot; feels nothing like a traditional check-up.
               </AccordionContent>
             </AccordionItem>
 
@@ -258,14 +274,15 @@ export default function Home() {
             <AccordionItem value="item-4" className="border border-border/50 bg-white px-6">
               <AccordionTrigger className="text-lg font-medium hover:text-accent">How do I know the results will look natural?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Our "Digital Smile Design" allows you to see a 3D simulation of your result before we even begin. You approve the aesthetic; we simply execute the precision.
+                Our &quot;Digital Smile Design&quot; allows you to see a 3D simulation of your result before we even begin. You approve the aesthetic; we simply execute the precision.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
       </section>
 
-
+      {/* 11. THE VIRTUAL SANCTUARY (Clinic Tour) */}
+      <VirtualTour />
 
     </div>
   );

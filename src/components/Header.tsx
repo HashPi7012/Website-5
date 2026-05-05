@@ -13,8 +13,9 @@ export function Header() {
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground/80">
             <a href="#rituals" className="hover:text-primary transition-colors">Rituals</a>
-            <a href="#transformation" className="hover:text-primary transition-colors">Transformation</a>
+            <a href="#atelier" className="hover:text-primary transition-colors">Transformations</a>
             <a href="#sanctuary" className="hover:text-primary transition-colors">The Sanctuary</a>
+            <a href="#artisans" className="hover:text-primary transition-colors">Team</a>
             <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
           </nav>
         </div>
