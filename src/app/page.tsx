@@ -18,6 +18,7 @@ import { CheckCircle2, Clock, ShieldCheck, Star } from "lucide-react";
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const yParallaxMid = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   // For the Investor Slider
   const [weeklyInvestment, setWeeklyInvestment] = useState([34]);
@@ -163,18 +164,18 @@ export default function Home() {
         <div className="flex gap-4 px-4 overflow-x-hidden opacity-90 h-[50vh]">
           <motion.img 
             style={{ y: yParallax }}
-            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop" 
-            className="w-1/3 object-cover rounded-sm shadow-xl" alt="Spa interior" 
+            src="/images/tour/reception.png"
+            className="w-1/3 object-cover rounded-sm shadow-xl" alt="Clinic reception" 
           />
           <motion.img 
-            style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
-            src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2073&auto=format&fit=crop" 
-            className="w-1/3 object-cover rounded-sm shadow-xl mt-12" alt="Relaxation" 
+            style={{ y: yParallaxMid }}
+            src="/images/tour/treatment-suite.png"
+            className="w-1/3 object-cover rounded-sm shadow-xl mt-12" alt="Treatment suite" 
           />
           <motion.img 
             style={{ y: yParallax }}
-            src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop" 
-            className="w-1/3 object-cover rounded-sm shadow-xl" alt="Clean design" 
+            src="/images/tour/recovery-lounge.png"
+            className="w-1/3 object-cover rounded-sm shadow-xl" alt="Recovery lounge" 
           />
         </div>
       </section>
